@@ -1,0 +1,21 @@
+<ion-view view-title="My Items" ng-init="myItemsInit()">
+  <ion-content>
+    <ion-item ng-show="loading_items" class="item">
+      <h2>Loading Items... Please wait a moment </h2>
+    </ion-item>
+    <ion-item ng-show="!loading_items && no_items" class="item">
+      <h2> No Items found - create one now ! </h2>
+    </ion-item>
+    <ion-list>
+      <ion-item href="#/itemDetails/{{item._id}}" class="item item-thumbnail-left  item-icon-right" collection-repeat="item in my_items ">
+        <img  ng-src="https://www.whybuy.co.il/{{item.data.pics.SMALL[0].url}}" alt="">
+        <i class="icon ion-chevron-right"></i>
+        <h3 dir="auto" style="text-align:left">{{item.data.name}}</h3>
+        <p>Active Rents: {{item.data.activeTransactions}}</p>
+      </ion-item>
+    </ion-list>
+    <div class="padding">
+      <a href="#/newItem" class=" button button-block button-positive">Add new item</a>
+    </div>
+  </ion-content>
+</ion-view>

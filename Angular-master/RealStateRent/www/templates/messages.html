@@ -1,0 +1,26 @@
+<ion-view view-title="My Messages" ng-init="messagesInit()">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="messagesInit()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-show="loading_conversations" class="item">
+        <h2>Loading conversations Please wait a moment </h2>
+      </ion-item>
+      <ion-item ng-show="!loading_conversations && no_conversations" class="item">
+        <h2> No conversations </h2>
+      </ion-item>
+      <ion-item href="#/conversation/{{thread._id}}" class="item  item-avatar" collection-repeat="thread in threads ">
+        {{getOtherParticipant(thread.data.participants)}}
+          <img ng-src="https://www.whybuy.co.il/{{other_participant.imageUrl}}" alt="">
+          <h3 dir="auto" style="text-align:left" >{{other_participant.firstName}}</h3>
+          <p>
+            <span ng-show="thread.data.relatedTransactionID"><span> השכרה של </span> <bdo dir="rtl">{{ thread.data.itemName }}</bdo></span>
+            <span ng-hide="thread.data.relatedTransactionID"><span> המודעה של </span> <bdo dir="rtl">{{ thread.data.itemName }}</bdo></span>
+          </p>
+          <span class="badge badge-assertive">{{thread.data.numOfMessages}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

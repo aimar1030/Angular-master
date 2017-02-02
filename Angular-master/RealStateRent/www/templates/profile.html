@@ -1,0 +1,63 @@
+<ion-view view-title="User Details" ng-init="profileInit()">
+
+  <ion-content>
+    <div class="list card">
+          <div class="item item-avatar">
+            <img ng-src="https://www.whybuy.co.il/{{profile.data.userIdentity.imageUrl}}">
+            <h2>{{profile.data.profile.personalAttributesMap.FIRST_NAME.value}}</h2>
+            <p><span ng-show="profile.data.statistics.karma > 0" ng-repeat="star in getNumber(profile.data.statistics.karma)" class="ion-android-star-outline"></span><span ng-hide="profile.data.statistics.karma>0">No Reviews Yet</span></p>
+          </div>
+          <div class="item tabs tabs-secondary ">
+            <span class="tab-item">
+                {{profile.data.profile.personalAttributesMap.DESCRIPTION.value}}
+            </span>
+          </div>
+
+          <div class="item item-icon-left" ng-show="userTrustInfo.facebookVerified">
+                <i class="icon ion-social-facebook-outline"></i>
+                <p>This user has validated facebook</p>
+          </div>
+          <div class="item item-icon-left" ng-show="userTrustInfo.creditCardVerified">
+                <i class="icon ion-card"></i>
+                <p>This user has validated Credit Card</p>
+          </div>
+          <div class="item item-icon-left" ng-show="userTrustInfo.emailVerified">
+                <i class="icon ion-ios-email-outline"></i>
+                <p>This user has validated Email</p>
+          </div>
+          <div class="item item-icon-left" ng-show="userTrustInfo.smsVerified">
+                <i class="icon ion-ios-telephone-outline"></i>
+                <p>This user has validated Phone</p>
+          </div>
+          <div class="item item-icon-left" ng-show="userTrustInfo.userIDVerified">
+                <i class="icon ion-document-text"></i>
+                <p>This user has validated ID</p>
+          </div>
+          <h3 class="padding">Reviews</h3>
+          <p class="padding" ng-hide="profile.message.userReviews">
+            This user has no reviews
+          </p>
+          <div ng-repeat="review in profile.message.userReviews" class="item item-avatar">
+                  <img ng-src="{{review.reviewerImageUrl}}">
+                  <h2>{{review.reviewerName}}</h2>
+                  <p>
+                    {{review.reviewerText}}
+                    <br>
+                    <span>{{review.reviewDate*1000|date:'d/MM/yyyy'}}</span>
+                  </p>
+          </div>
+  </div>
+  <h2 class="padding">Other products by {{profile.data.profile.personalAttributesMap.FIRST_NAME.value}} </h2>
+  <ion-scroll direction="x" class="wide-as-needed">
+      <div class="row">
+          <div ng-repeat="item in items" class="card col col-33" ng-click="open_item(item._id)">
+              <div  style="text-align:center">
+                <img ng-src="https://www.whybuy.co.il/{{item.data.pics.MEDIUM[0].url}}">
+              </div>
+          </div>
+      </div>
+  </ion-scroll>
+
+  </ion-content>
+
+</ion-view>

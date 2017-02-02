@@ -1,0 +1,76 @@
+<ion-view view-title="My Rents" ng-init="transactionsInit()">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="transactionsInit()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-show="loading_transactions" class="item">
+        <h2>Loading Rents - Please wait a moment </h2>
+      </ion-item>
+      <ion-item ng-show="!loading_transactions && no_transactions" class="item">
+        <h2> No Rent </h2>
+        <div class="padding">
+          <a href="#/search" class="button button-assertive button-block">Search for something to rent</a>
+        </div>
+      </ion-item>
+      <ion-item class="item  item-thumbnail-left" ng-repeat="transaction in transactions ">
+           <img ng-src="https://www.whybuy.co.il/{{transaction.PICTURES.SMALL[0].url}}">
+           <h2  dir="auto" style="text-align:left">From: {{transaction.OWNER_FIRST_NAME }}, Price: {{transaction.totalAmount | currency:"&#8362;":2}} </h2>
+           <p> Duration: {{localize_date(transaction.TRAN_START_DATE)| date:'dd/MM/yyyy'}} - {{localize_date(transaction.TRAN_END_DATE)| date:'dd/MM/yyyy'}}</p>
+           <p> Deposit: {{transaction.protectionAmount}} &#8362; Offered Price per day{{transaction.amountPerTimeUnit | currency:"&#8362;":2}}</p>
+
+            <p style="white-space: normal;" ng-show="transaction.currentState == 'REQUESTOR_SENT_OFFER'"> Current State: Offer Sent</p>
+            <p style="white-space: normal;" ng-show="transaction.currentState == 'OWNER_RECEIVED_OFFER'"> Current State: Waiting for Approval by Item Owner</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'OWNER_ACCEPT_OFFER'"> Current State: Waiting for Payment</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'REQUESTOR_RECEIVE_ACCEPT'"> Current State: Waiting for Payment</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'PENDING_PAYEMNT_EXECUTION'"> Current State: Waiting for Payment</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'PAYMENT_IN_PROCESS'"> Current State: Waiting for payment approval</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'RENT_PAYMENT_APPROVED'"> Current State: Payment Approved</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'ACTIVE'"> Current State: Waiting for rent start day</p>
+            <p style="white-space: normal;" ng-show="transaction.currentState == 'RENT_IN_PROGRESS'"> Current State: Rent in Progress</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'PENDING_CLOSE'"> Current State: Rent in Progress</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'PENDING_FEEDBACK'"> Current State: Waiting for feedback</p>
+            <p style="white-space: normal;" ng-show="transaction.currentState == 'CLOSED'"> Current State: Rent transaction complete</p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState == 'SITE_REVIEW'"> Current State : <span class="assertive" >Transaction being reviewed by the system</span> </p>
+            <p style="white-space: normal;"  class="" ng-show="transaction.currentState=='REQUEST_DECLINED'">
+               <span class="assertive"><b>Trasaction Refused</b></span>
+               <br>
+               <span ng-show="transaction.requestorCancellationText" class="hidden-xs">Renter canceled the transaction: {{transaction.requestorCancellationText}}</span>
+               <span ng-show="transaction.ownerCancellationText" class="hidden-xs">Item owner canceled the transaction: {{transaction.ownerCancellationText}}</span>
+               <span ng-show="transaction.systemCancellationText" class="hidden-xs">Transaction canceled by the system: {{transaction.systemCancellationText}}</span>
+            </p>
+            <p style="white-space: normal;"  ng-show="transaction.currentState=='REQUEST_CANCELED'">
+               <span class="assertive"><b>Transaction canceled</b></span>
+               <span ng-show="transaction.requestorCancellationText" class="hidden-xs">Renter canceled the transaction: {{transaction.requestorCancellationText}}</span>
+               <span ng-show="transaction.ownerCancellationText" class="hidden-xs">Item owner canceled the transaction: {{transaction.ownerCancellationText}}</span>
+               <span ng-show="transaction.systemCancellationText" class="hidden-xs">Transaction canceled by the system: {{transaction.systemCancellationText}}</span>
+            </p>
+              <a href="#/item/{{transaction.itemID}}" class="button button-positive button-block">Send another offer</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'REQUESTOR_SENT_OFFER'" class="button button-assertive button-block">Cancel</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'OWNER_RECEIVED_OFFER'" class="button button-assertive button-block">Cancel</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'OWNER_ACCEPT_OFFER'" class="button button-assertive button-block">Cancel</a>
+              <a ng-show="transaction.currentState == 'OWNER_ACCEPT_OFFER'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'paypal')">Pay with PayPal</a>
+              <a ng-show="transaction.currentState == 'OWNER_ACCEPT_OFFER'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'payme')">Pay with Credit Card</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'REQUESTOR_RECEIVE_ACCEPT'" class="button button-assertive button-block">Cancel</a>
+              <a ng-show="transaction.currentState == 'REQUESTOR_RECEIVE_ACCEPT'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'paypal')">Pay with PayPal</a>
+              <a ng-show="transaction.currentState == 'REQUESTOR_RECEIVE_ACCEPT'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'payme')">Pay with Credit Card</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'PAYMENT_IN_PROCESS'" class="button button-assertive button-block">Cancel</a>
+              <a ng-show="transaction.currentState == 'PAYMENT_IN_PROCESS'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'paypal')">Pay with PayPal</a>
+              <a ng-show="transaction.currentState == 'PAYMENT_IN_PROCESS'" class="button button-assertive button-block" ng-disabled="disabled_button[scene.id]" ng-click="message_update(transaction.id,'payme')">Pay with Credit Card</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'RENT_PAYMENT_APPROVED'" class="button button-assertive button-block">Cancel</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'ACTIVE'" class="button button-assertive button-block">Cancel</a>
+              <a href="#/dispute_transaction/{{transaction.id}}/{{transaction.itemID}}" ng-show="transaction.currentState == 'ACTIVE'" class="button button-assertive button-block">Dispute</a>
+              <a ng-show="transaction.currentState == 'RENT_IN_PROGRESS'&&transaction.TRAN_START_DATE==today_string&&!transaction.itemCollectionConfirmed" class="button button-assertive button-block" ng-click="confirmation_create(transaction.id)">Confirm Item Collection</a>
+              <a href="geo:{{transaction.GEOMETRY.location.lat}},{{transaction.GEOMETRY.location.lng}}" ng-show="transaction.currentState == 'RENT_IN_PROGRESS'" class="button button-positive button-block">Navigate there</a>
+              <a ng-show="((transaction.currentState == 'PENDING_CLOSE'&&transaction.TRAN_END_DATE==today_string)||(transaction.currentState == 'RENT_IN_PROGRESS'&&transaction.TRAN_END_DATE==today_string))&&transaction.itemCollectionConfirmed"  class="button button-assertive button-block" ng-click="confirmation_scan(transaction.id)">Confirm Item Return</a>
+              <a href="#/cancel_transaction/{{transaction.id}}/{{transaction.itemID}}/{{side}}" ng-show="transaction.currentState == 'RENT_IN_PROGRESS'" class="button button-assertive button-block">Cancel</a>
+              <a href="#/dispute_transaction/{{transaction.id}}/{{transaction.itemID}}" ng-show="transaction.currentState == 'RENT_IN_PROGRESS'" class="button button-assertive button-block">Dispute</a>
+              <a href="#/requestorFeedback/{{transaction.id}}" ng-show="transaction.currentState == 'PENDING_CLOSE'" class="button button-positive button-block">Feedback</a>
+              <a href="#/dispute_transaction/{{transaction.id}}/{{transaction.itemID}}" ng-show="transaction.currentState == 'PENDING_CLOSE'" class="button button-assertive button-block">Dispute</a>
+              <a href="#/requestorFeedback/{{transaction.id}}" ng-show="transaction.currentState == 'PENDING_FEEDBACK'" class="button button-positive button-block">Feedback</a>
+              <a class="button button-positive button-block" ng-click="open_send_message_page(transaction.id,'from_transaction')">Send Message</a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

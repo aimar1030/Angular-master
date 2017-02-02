@@ -1,0 +1,432 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/www/lib/onsen/stylus/components/global.styl
+SHA1-Digest: f35ZRxqv05PGJxn6Ns7U21Em7aQ=
+
+Name: res/drawable-xxxhdpi-v4/icon.png
+SHA1-Digest: 7HS3/Kdbmdtip8gCx73STXgxGdU=
+
+Name: res/xml/config.xml
+SHA1-Digest: tuO3vyQWxVlWua7gH4PwciFkVII=
+
+Name: assets/www/lib/onsen/stylus/components/page.styl
+SHA1-Digest: ZrrL62+7MUszKXOH1jn2QDf6v0I=
+
+Name: assets/www/lib/onsen/css/icemoon/fonts/icomoon.ttf
+SHA1-Digest: e/O5DsRtyID/O16TaEfR9M7XIdI=
+
+Name: assets/www/fonts/BebasNeueLight.otf
+SHA1-Digest: tFdzqV1NFmYejJj5HphXXeUr91s=
+
+Name: assets/www/lib/onsen/stylus/components/range.styl
+SHA1-Digest: 9CeCKkXsumRpPGcccvIT62z9/VA=
+
+Name: assets/www/lib/onsen/css/original-onsen-css-components.css
+SHA1-Digest: CfTzXO05amJzQZqigRZDnd6aWm8=
+
+Name: assets/www/lib/onsen/js/onsenui.js
+SHA1-Digest: NqK6w3TqK3QhFo2duS9acAeGL8Y=
+
+Name: res/drawable-mdpi-v4/screen.png
+SHA1-Digest: fNfLGbxosmRKuxFUwztEpG35i5c=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-sunshine-theme.css
+SHA1-Digest: j2YyHR18LnIS5Ial4PNz5/lsQkM=
+
+Name: assets/www/fonts/playfair.woff2
+SHA1-Digest: DoTD0Z7jbm9rmGFK8ZsMtlJ07HI=
+
+Name: assets/www/nbproject/private/private.xml
+SHA1-Digest: 0yMyfBXgjMRxBVPLGLZdEI/b+rw=
+
+Name: assets/www/lib/onsen/stylus/components/textarea.styl
+SHA1-Digest: AAcV/4S8RJxRgn+EOqt5cFMhXfE=
+
+Name: assets/www/lib/onsen/css/font_awesome/fonts/fontawesome-webfont.
+ svg
+SHA1-Digest: KKDNEp625X0h+MURWB8ZCe5rk0o=
+
+Name: assets/www/lib/onsen/js/angular/angular-animate.js
+SHA1-Digest: 2V+LFq1DyBEmraVyFdeNWGAKcME=
+
+Name: assets/www/completeorder1.html
+SHA1-Digest: r9INaVU19TeFQ494pPTeux2nXqQ=
+
+Name: res/drawable-hdpi-v4/icon.png
+SHA1-Digest: MrFXdXs6bdMIVVHr9WcHnV+y4Jk=
+
+Name: assets/www/fonts/lobster.woff2
+SHA1-Digest: IEmhidcsqTlPqa2PLHcLoVvjDXE=
+
+Name: assets/www/lib/onsen/css/ionicons/fonts/ionicons.svg
+SHA1-Digest: P09fO9sXeAmut34nMWZa4+EOugY=
+
+Name: assets/www/lib/onsen/stylus/default.styl
+SHA1-Digest: two93it+FPDufLryNhllTEAXeuA=
+
+Name: assets/www/js/jquery.min.js
+SHA1-Digest: mv3E/slUZGvWJwyvgvEH/e9gW8U=
+
+Name: assets/_where-is-www.txt
+SHA1-Digest: avAF2z5NXxA7dhGqngRyQ0ETAG0=
+
+Name: res/drawable-xhdpi-v4/screen.png
+SHA1-Digest: 80eSvdS/ZJX39FHkjfDhi0ARIfA=
+
+Name: assets/www/nbproject/project.xml
+SHA1-Digest: jip9pwJ3JJ/Y1ElvX78HXFlZnX4=
+
+Name: assets/www/cordova.js
+SHA1-Digest: oJ0ESkPlbmOnH0qguWuut2CG4Uk=
+
+Name: assets/www/fonts/playfair.woff
+SHA1-Digest: qLo6KXWG0jeZI4kSAPQ/z0MXRNs=
+
+Name: assets/www/js/dishesManage.js
+SHA1-Digest: fGomqX1Qx3v0bc3B/AC/WQtAnjc=
+
+Name: assets/www/lib/onsen/css/onsenui.css
+SHA1-Digest: iqyIUJ5WBc9zqjhqfBvdOXCAfa4=
+
+Name: assets/www/login.html
+SHA1-Digest: bABNNEDdKIq3VRzHme0NSBJ6SLE=
+
+Name: assets/www/css/custom.css
+SHA1-Digest: 5Jg0neoG4pinmeajAdwomQPy7xY=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-default.css
+SHA1-Digest: oZCvh8K2HhNjzYoifgrb2wyN96k=
+
+Name: assets/www/fonts/opensanslight.ttf
+SHA1-Digest: uqPaIwSc7Ve0EtkNwTnw85h9XzQ=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-purple-theme.css
+SHA1-Digest: 175NP8+giWvSdEuVXm4PhynJ5vI=
+
+Name: assets/www/lib/onsen/js/onsenui_all.js
+SHA1-Digest: 8g+kmm96K8rbAKa5jK3kMYQ7VQo=
+
+Name: assets/www/lib/onsen/css/font_awesome/fonts/fontawesome-webfont.
+ eot
+SHA1-Digest: rQwFE6L7tzJqxeEffJS5WqI7AuA=
+
+Name: assets/www/img/cashactive.png
+SHA1-Digest: 7UIjWjlvucdakpfvBKkrz+eOF64=
+
+Name: resources.arsc
+SHA1-Digest: lsgrcbL2voci4a2ntBtRsZu8Qmo=
+
+Name: assets/www/progress.html
+SHA1-Digest: c6ZXu6P1LLfwyl9S4l+pAwjAYFI=
+
+Name: assets/www/img/tarjeta.png
+SHA1-Digest: xlop4PLEoCXWq+zLXPfBdzUoODI=
+
+Name: assets/www/fonts/playfair.ttf
+SHA1-Digest: PgOwVLVsZiofmpv/y6jfL0SyX+k=
+
+Name: assets/www/lib/onsen/js/onsenui.min.js
+SHA1-Digest: 4axD/7p6cPNIVJHVUTTZhG1Mr/c=
+
+Name: assets/www/lib/onsen/css/font_awesome/css/font-awesome.css
+SHA1-Digest: FeW1qcgeLPicdoqAzQbGGA81qwQ=
+
+Name: assets/www/lib/onsen/stylus/components/modal.styl
+SHA1-Digest: T3krJxRlUWPP00nan1LtH84vBb0=
+
+Name: assets/www/fonts/BebasNeueRegular.otf
+SHA1-Digest: ejS1t98bJL/xXGUiBKeRMCwAAbI=
+
+Name: assets/www/lib/onsen/css/icemoon/fonts/icomoon.svg
+SHA1-Digest: PV/3i6qC4ETtuayiqlL9/35oNl8=
+
+Name: AndroidManifest.xml
+SHA1-Digest: uI5w3fSH33919c4whKUk68+9fK0=
+
+Name: assets/www/img/logo.png
+SHA1-Digest: FU6gEjqGP1FjtEJ+MWp+T2rn9JQ=
+
+Name: assets/www/lib/onsen/stylus/components/popover.styl
+SHA1-Digest: zzxZxNasO/jyP2OwTMiSKuxe1RE=
+
+Name: assets/www/adddrink.html
+SHA1-Digest: rDXChE7NFHtnVxN9jc+LyeLH8ew=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-dark-theme.css
+SHA1-Digest: dEWDoe5r9yEXU+OLKsLy201Ei98=
+
+Name: assets/www/js/app.js
+SHA1-Digest: 4E5XeLGIt7UTlsUPPCzgGZf5giI=
+
+Name: assets/www/lib/onsen/stylus/sunshine-theme.styl
+SHA1-Digest: mK/qvWUfrMDAwsvDL/qjWxd3C4o=
+
+Name: assets/www/lib/onsen/js/angular/angular-csp.css
+SHA1-Digest: 3ncI40dRW9uRlUkoRYD22jJHVKo=
+
+Name: assets/www/lib/onsen/stylus/dark-theme.styl
+SHA1-Digest: KOl0yilHqSx56QxSlGQwRyUmBdw=
+
+Name: assets/www/lib/onsen/js/onsenui_all.min.js
+SHA1-Digest: N6enMD922j5NhniiLH/+Xme6tqk=
+
+Name: assets/www/lib/onsen/css/onsen-css-components.css
+SHA1-Digest: diGY2Ftj9u3l5TBWgQgiRYbU0BY=
+
+Name: assets/www/js/angular-local-storage.min.js
+SHA1-Digest: mdvutNiIts4RAxCScEBEWPNqCfw=
+
+Name: assets/www/lib/onsen/css/ionicons/fonts/ionicons.woff
+SHA1-Digest: AYv10MEc7udEKgaIr1L1FbA2bbg=
+
+Name: classes.dex
+SHA1-Digest: wvN2P5UobmJMA9tYifEkimKHFtg=
+
+Name: assets/www/cordova_plugins.js
+SHA1-Digest: H7WYa0t2L4k1L5MDZrfyR73BDxY=
+
+Name: assets/www/food.html
+SHA1-Digest: gFVUfC8N24JlVdI9ph4q7OFUqWs=
+
+Name: assets/www/nbproject/project.properties
+SHA1-Digest: 5EtptI5PTkXgrE6VTUDFy+KiiLQ=
+
+Name: res/drawable/icon.png
+SHA1-Digest: 6L5TPck1Gfco7I0At8myRqW2IEU=
+
+Name: assets/www/js/dbManage.js
+SHA1-Digest: FB4LmkhHBTvdKOs3s2EYOk0HcmY=
+
+Name: assets/www/receipts.html
+SHA1-Digest: aWnA1kQemlq6q037oZTxTg7VwmQ=
+
+Name: assets/www/myorders.html
+SHA1-Digest: Ak7SFp0g6ZYT1tvaqpSj5H/NvJ0=
+
+Name: assets/www/lib/onsen/stylus/components/tab-bar.styl
+SHA1-Digest: TO1C/W+Ombt0kKQo0HfpmkR51OI=
+
+Name: assets/www/lib/onsen/css/font_awesome/css/font-awesome.min.css
+SHA1-Digest: SKBqKgOUiil5SaZvMiw3NGEmHgE=
+
+Name: assets/www/lib/onsen/stylus/components/util.styl
+SHA1-Digest: eqc7r/sKYclyoIN2NQ6tmfNNmpk=
+
+Name: assets/www/css/app.css
+SHA1-Digest: Y3wdMIwAGj70S8Z/DCNhaojHqTM=
+
+Name: assets/www/js/cartManage.js
+SHA1-Digest: 33JaCJwcx9GxW0i8JbxPTRWmuzY=
+
+Name: assets/www/addfood.html
+SHA1-Digest: 9Wg92bxlFemAOYEcH0fSBGyht7c=
+
+Name: assets/www/menu.html
+SHA1-Digest: Q7MGVyyktBZnrd1+P/P4lZQAUFI=
+
+Name: assets/www/fonts/lobster.ttf
+SHA1-Digest: xUd7ial1bAXpdGD5tyynwnRr0do=
+
+Name: assets/www/lib/onsen/stylus/components/index.styl
+SHA1-Digest: 9lnYbOISxmKspPgIR7v7PMjwQnA=
+
+Name: assets/www/lib/onsen/stylus/components/checkbox.styl
+SHA1-Digest: H/8vS1UZyblO66khkIztbtW8Gfs=
+
+Name: assets/www/lib/onsen/stylus/components/list.styl
+SHA1-Digest: LPoGdxEx07Zckj7FOQf+8saVmyY=
+
+Name: assets/www/plugins/nl.x-services.plugins.toast/test/tests.js
+SHA1-Digest: THQ3oujn9oTFGbcgpfU/EpF37E8=
+
+Name: assets/www/lib/onsen/stylus/components/switch.styl
+SHA1-Digest: +cZQ1Yyd9DgdVDCLg5WC6QeKMW4=
+
+Name: assets/www/lib/onsen/css/icemoon/fonts/icomoon.eot
+SHA1-Digest: ilOCMKJOwTJ7w5boo+dDvuKEnH8=
+
+Name: assets/www/lib/onsen/stylus/components/notification.styl
+SHA1-Digest: ryQIrgRH2zjYIEku+ZR4GYmclGU=
+
+Name: assets/www/lib/onsen/js/angular/angular-touch.js
+SHA1-Digest: cgtMBfBmgOUPHcCkIz462Ajg6wU=
+
+Name: assets/www/lib/onsen/css/ionicons/css/ionicons.css
+SHA1-Digest: RMPeBufA5Z89XG/QAilqtebP6NM=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-blue-theme.css
+SHA1-Digest: c3K5sTN7diqv0peV/aWXtiT3Se8=
+
+Name: assets/www/lib/onsen/stylus/components/search-input.styl
+SHA1-Digest: 4Howox3zAgsKbdA1ezAMMKiCqs0=
+
+Name: assets/www/lib/onsen/stylus/components/toolbar-button.styl
+SHA1-Digest: TEYVpF5FY2rt5iOOfUqnXKMFSmk=
+
+Name: assets/www/lib/onsen/js/angular-local-storage.min.js
+SHA1-Digest: mdvutNiIts4RAxCScEBEWPNqCfw=
+
+Name: assets/www/lib/onsen/js/angular/README.md
+SHA1-Digest: XIEHD+DRgWg2D3IFgKWqnytfevs=
+
+Name: assets/www/lib/onsen/stylus/components/button-bar.styl
+SHA1-Digest: 20XSM4M1Rlv0TdKsMBT0WN2Y5zQ=
+
+Name: assets/www/css/plugins.css
+SHA1-Digest: yN5KWp7+Ip6q+dSIjIVM41Cw/0s=
+
+Name: assets/www/plugins/org.apache.cordova.splashscreen/www/splashscr
+ een.js
+SHA1-Digest: +/CN5vTcEhArRc2SA5VugBiE7YM=
+
+Name: assets/www/lib/onsen/js/angular/angular.min.js.map
+SHA1-Digest: xqmGX3EM0OTY0mgtazzHTvdE+No=
+
+Name: assets/www/plugins/nl.x-services.plugins.toast/www/Toast.js
+SHA1-Digest: yRxBotu/8S2gVnWsIK2GzMM9AcI=
+
+Name: assets/www/img/cash.png
+SHA1-Digest: ZWDSroYoGq89hy4OZpWITXvrxxw=
+
+Name: assets/www/lib/onsen/stylus/components/navigation-bar.styl
+SHA1-Digest: jYtNh+0k/Lge9mrhnFOSlbVVdh8=
+
+Name: res/drawable-xhdpi-v4/icon.png
+SHA1-Digest: CR6EZklTPanUBujWQKvM0eLJLd4=
+
+Name: assets/www/dishes.html
+SHA1-Digest: Lkbv4KGMhhqORG/ezSrn/sxt4bU=
+
+Name: assets/www/lib/onsen/css/font_awesome/fonts/fontawesome-webfont.
+ ttf
+SHA1-Digest: xZeSwKBaTaH5ICo5Cifi1QDDZ1I=
+
+Name: res/drawable-hdpi-v4/screen.png
+SHA1-Digest: +AI6LnQv0DtQHPz/85P4JQbgwa0=
+
+Name: assets/www/loading.html
+SHA1-Digest: 7EVEyWR93mo3MZgjnUfVt0UHkyg=
+
+Name: assets/www/lib/onsen/css/onsen-css-components-blue-basic-theme.c
+ ss
+SHA1-Digest: oZCvh8K2HhNjzYoifgrb2wyN96k=
+
+Name: assets/www/lib/onsen/js/angular/angular.min.js
+SHA1-Digest: CzdzgYBNFY+GaOqaP0QL5fBeoyc=
+
+Name: assets/www/lib/onsen/stylus/blue-theme.styl
+SHA1-Digest: tSVfSA2IWERha9LZur4KleR3KkI=
+
+Name: assets/www/fonts/BebasNeueBold.otf
+SHA1-Digest: 0XvoKZhuuMaVhVGmOlHNB6FanNQ=
+
+Name: assets/www/js/receiptManage.js
+SHA1-Digest: YU22/PlaxeB3kcU8yMYWtzagQ0w=
+
+Name: assets/www/js/index.js
+SHA1-Digest: YYj6w/c1eCli3yrwbqTIv8w01wM=
+
+Name: res/drawable-ldpi-v4/screen.png
+SHA1-Digest: /Mc9K7lsHWtq40VrsYQD5SmUUng=
+
+Name: assets/www/lib/onsen/css/icemoon/fonts/icomoon.woff
+SHA1-Digest: 43H8spGTM7MlkC/rTXqpq+c8Ycw=
+
+Name: assets/www/fonts/opensansbold.ttf
+SHA1-Digest: 2D0XZPK9m464DERictvjhCeCiHw=
+
+Name: assets/www/lib/onsen/stylus/components/button.styl
+SHA1-Digest: lnKOk/Z4OOKizMlIJgVfD68u8ME=
+
+Name: assets/www/index.html
+SHA1-Digest: POWPX1HJ4XN+Ohh61GaklWZyGRI=
+
+Name: assets/www/lib/onsen/css/font_awesome/fonts/fontawesome-webfont.
+ woff
+SHA1-Digest: fy88VcLeGSOHw1G5lRFfa3ngkXM=
+
+Name: assets/www/lib/onsen/js/angular/bower.json
+SHA1-Digest: RzJeJim5AyBz3rNFwYwSa/vYdII=
+
+Name: assets/www/js/drinkManage.js
+SHA1-Digest: vxpJQfjdOTbf4VfIrslTJn/D/t4=
+
+Name: assets/www/img/tarjetaactive.png
+SHA1-Digest: q1ScxVfJJvKZsSv1Qqv2/onpTTQ=
+
+Name: assets/www/lib/onsen/stylus/blue-basic-theme.styl
+SHA1-Digest: +Jhij59VTHuchttTr6HiOtOAcVk=
+
+Name: res/drawable-mdpi-v4/icon.png
+SHA1-Digest: 8rC4xmGMI0qraNvKWg/TiENHQ8s=
+
+Name: assets/www/lib/onsen/stylus/components/alert-dialog.styl
+SHA1-Digest: EqnPpv+1I1uUe4jCkwtIdMblqvc=
+
+Name: assets/www/nbproject/private/private.properties
+SHA1-Digest: H3vkkdrwEWaA4V4/JJyELBt20XU=
+
+Name: assets/www/css/plugins.less
+SHA1-Digest: JStfAZVAehJlJ5ZmGXXT+Req9Yg=
+
+Name: assets/www/img/chile.png
+SHA1-Digest: tvq2bcnOXI81RpXk9y8JUyUvIzM=
+
+Name: assets/www/lib/onsen/stylus/components/radio-button.styl
+SHA1-Digest: T0PYLHDVF5QXgmdNTKXOKq7Vi3w=
+
+Name: assets/www/lib/onsen/css/icemoon/css/style.css
+SHA1-Digest: Sq1UDgDuIJLZZmHZrLAD6tjbEHY=
+
+Name: assets/www/lib/onsen/css/ionicons/fonts/ionicons.eot
+SHA1-Digest: zR6TgPsWp0tcvWYc3NVkEopZMbw=
+
+Name: assets/www/js/core.js
+SHA1-Digest: /KVYAHF/Pt8euGTy2QxDCHq2m/0=
+
+Name: assets/www/js/plugins.js
+SHA1-Digest: QwrI8XFsS5JBi26MveoyeVQRR7M=
+
+Name: assets/www/completeorder.html
+SHA1-Digest: nUYoKq8lHWhkkYDuyNqaCUPvTgg=
+
+Name: assets/www/lib/onsen/css/ionicons/fonts/ionicons.ttf
+SHA1-Digest: q3/uBmSk2Ax4UZ9J8ZCrHT1I8RM=
+
+Name: assets/www/order.html
+SHA1-Digest: DYPUVnTwdLorfVbFt9jVhelacWo=
+
+Name: assets/www/lib/onsen/js/angular/angular.js
+SHA1-Digest: t8t53twnBxH3DBBfZhWten2dM2k=
+
+Name: assets/www/lib/onsen/js/angular/angular.min.js.gzip
+SHA1-Digest: 1mc4OjjSkia0ZGTcfqtqCYPdcBs=
+
+Name: assets/www/fonts/lobster.woff
+SHA1-Digest: HBnV2spx0npegvyU9HvsXn/GfZk=
+
+Name: assets/www/js/userManage.js
+SHA1-Digest: TxFi9eHnZ68z8zTR5QkBHONwVMw=
+
+Name: assets/www/lib/onsen/stylus/purple-theme.styl
+SHA1-Digest: S8p2F+a9AzYbKIGHgmquz2LXafY=
+
+Name: assets/www/lib/onsen/css/ionicons/css/ionicons.min.css
+SHA1-Digest: VsnkkLJc2Ef4sLVVhjxbnLUW2jk=
+
+Name: assets/www/lib/onsen/stylus/components/dialog.styl
+SHA1-Digest: c8659APrlQ1LQB3Aovsl1b0FJd8=
+
+Name: assets/www/lib/onsen/css/font_awesome/fonts/FontAwesome.otf
+SHA1-Digest: RhmDIfkWqyqobArVHgqsqnN4O9c=
+
+Name: res/drawable-xxhdpi-v4/icon.png
+SHA1-Digest: Um8UgPFQzxzbxrjhPZXbhrwnTBM=
+
+Name: assets/www/lib/onsen/stylus/components/text-input.styl
+SHA1-Digest: lctdjY3tCLDupZ1EgSeDVsUSn0g=
+
+Name: assets/www/css/app.less
+SHA1-Digest: zi6vnX7OkPK4cTYKhSC2b9ovvlM=
+

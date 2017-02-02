@@ -1,0 +1,20 @@
+<ion-view view-title="Dispute Transaction" ng-init="cancelTransactionInit()">
+  <ion-content>
+    <form  ng-submit="open_dispute(transaction.id,dispute_text,transaction.itemID)">
+      <div class="card">
+           <div class="list">
+             <label class="item item-input">
+               <textarea type="text" placeholder=" Something wrong ?" ng-model="dispute_text"></textarea>
+             </label>
+           </div>
+      </div>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-center">
+          </div>
+        </div>
+        <button type="submit" class="button button-block button-positive"><span ng-hide="processing">Send</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+      </div>
+     </form>
+  </ion-content>
+</ion-view>

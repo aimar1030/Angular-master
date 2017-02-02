@@ -1,0 +1,181 @@
+/* Empty. Add your own CSS if you like */
+.red {
+  background-color: rgb(242, 135, 135);
+}
+.overall_satisfaction,.ion-thumbsup,.ion-thumbsdown, .ion-ios-star {
+  font-size: 25px;
+}
+.active_rating {
+  color:#febf11;
+  transition-property: color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
+}
+bdo {
+  unicode-bidi: embed;
+}
+.my_bubble {
+  background-color:blue;
+  border-radius:10px;
+  margin-bottom:5px;
+  color:white;
+  padding:10px;
+
+}
+.other_bubble {
+  margin-bottom:5px;
+  padding:10px;
+  background-color:grey;
+  border-radius:10px;
+  color:white;
+}
+.send_button {
+  background-color: green;
+  border-radius:10px;
+  color:white;
+  margin:5px;
+}
+input.message_input {
+  border-radius:10px;
+  border: 1px solid black;
+  margin:5px;
+  padding:5px;
+}
+.angular-google-map-container { height: 400px; }
+
+@keyframes glowing {
+  0% { background-color: #00afd7; box-shadow: 0 0 3px #00afd7; }
+  50% { background-color: #0094FF; box-shadow: 0 0 10px #0094FF; }
+  100% { background-color: #06CAF7; box-shadow: 0 0 3px #06CAF7; }
+}
+
+#send_offer_button  {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+#profile_image {
+  max-height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Customized CSS*/
+.login {
+  background: url(../imgs/bg6.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #6F6B67;
+  font-family:'Open Sans';
+}
+.login img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.bar .login{
+  padding: 0px;
+  height: 0px;
+}
+.bar.bar-stable {
+  border-color: transparent;
+}
+.card {
+  background-color: #fff;
+  opacity: 0.5;
+
+}
+input[type="email"] {
+  color: #6F6B67;
+  font-weight: bold;
+  font-family:'Open Sans';
+}
+
+input[type="password"] {
+  color:#6F6B67;
+  font-weight: bold;
+  font-family:'Open Sans';
+}
+
+input[type="email"]::-webkit-input-placeholder { color:#6F6B67;} /* Chrome */
+input[type="email"]::-moz-placeholder { color:#6F6B67; } /* firefox 19+ */
+input[type="email"]:-ms-input-placeholder { color:#6F6B67; } /* ie */
+
+input[type="password"]::-webkit-input-placeholder { color:#6F6B67;}
+input[type="password"]::-moz-placeholder { color:#6F6B67; } /* firefox 19+ */
+input[type="password"]:-ms-input-placeholder { color:#6F6B67; } /* ie */
+
+.card::-webkit-input-placeholder { color:#00f; }
+.button.button-positive.login_btn {
+  background-color: #4A6EA9;
+  border-color: #4A6EA9;
+  color: #fff;
+  font-family:'Open Sans';
+}
+.button.button-positive.fb_btn {
+  background-color: #4A6EA9;
+  border-color: #4A6EA9;
+  color: #fff;
+  font-family:'Open Sans';
+}
+.button.button-positive.signup_btn {
+  background-color: #4A6EA9;
+  border-color: #4A6EA9;
+  color: #fff;
+  font-family:'Open Sans';
+}
+.nav-bar-block, .bar {
+  background-color: inherit !important;
+}
+.ion-navicon:before {
+  content: "\f397";
+  color: #6F6B67;
+}
+
+.button.button-positive {
+
+  border-color: brown;
+  background-color: brown;
+}
+
+.bar.bar-stable .title {
+  color: #6F6B67;
+}
+.term-link{
+  text-decoration: none;
+}
+.term-link a:hover{
+  text-decoration: underline;
+}
+.term-link{
+  text-decoration: none;
+}
+.term-link span {
+  color:#3B598F;
+  font-weight: bold;  
+}
+
+.privacy-link {
+  text-decoration: none;
+}
+
+.privacy-link span{
+  color:#3B598F;
+  font-weight: bold;  
+}
+
+.login_label {
+  color: #6F6B67;
+  font-family:'Open Sans';
+  font-weight:Bold;
+}
+.fb_img {
+  width:35px !important;
+  height:35px !important;
+  margin-top:2px !important;
+  margin-left: -8px !important;
+  float:left;
+}

@@ -1,0 +1,33 @@
+<ons-page class="orderpay_page">
+    <ons-toolbar modifier="opacity">
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center" style="font-size:20px;text-align: center;color:#00A95D;font-family:opensanslight;">
+            My Orders<br/>
+            <span style="color:white;font-size:12px;">StartUp Chile Rooftop</span>
+        </div>
+        <div class="right">
+            <ons-toolbar-button class="price">$ 3200</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+        <div style="box-shadow: 0px 3px 8px lightgrey;">
+            <div style="display:table;margin:5%;width: 90%;">
+                <div class="item_title" style="font-size:28px;">Johnny Walker Black</div>
+                <div style="display: table-cell;vertical-align: middle;"><input class="inc_input" readonly="true" type="text" name="itemnumber" id="itemnumber" value="1"></div>
+                <div style="display: table-cell;vertical-align: middle;">
+                    <div onClick="incdecCounter('inc')" class="inc auto_button">+</div>
+                    <div onClick="incdecCounter('dec')" class="dec auto_button">-</div>
+                </div>
+            </div>
+        </div>
+        <div style="box-shadow: 0px 3px 8px lightgrey;">
+            
+        </div>
+        <ons-button modifier="small" class="cancel_button" style="float:left;">
+            CANCEL
+        </ons-button>
+        <ons-button modifier="small" class="order_button" style="float:right;">
+            PAY
+        </ons-button>
+</ons-page>

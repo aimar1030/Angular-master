@@ -1,0 +1,67 @@
+<ons-page class="menu_html" ng-controller="cartCtrl" ng-init="start();">
+    <ons-toolbar modifier="opacity">
+        <div class="left">
+            <ons-back-button ng-click="menu.setMainPage('food.html', {closeMenu: true});">Back</ons-back-button>
+        </div>
+        <div class="center" style="text-align: center;font-family: opensanslight;">
+            <div>órdenes</div>
+        </div>
+        <div class="right">
+            <ons-toolbar-button class="coupon_icon">${{totalPrice}}</ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="app-page">
+        <div ng-repeat="cart in cart_index track by $index" style="border-bottom:1px solid black;border-top: 1px solid black;margin-top: 1%;">
+            <div style="display:table;margin:5%;margin-bottom:0px;width: 90%;">
+                <div style="display:table-cell;vertical-align:top;margin-right:1%;"><img style="width: 30px;height:30px;" src="{{cart.imgurl}}"/>
+                </div>
+                <div style="display:table-cell;vertical-align:top;width:100%;" class="item_title"> {{cart.foodname}}
+                </div>
+                <div style="display:table-cell;vertical-align:top;text-align: right;">
+                    <ons-icon class="inc auto_button" ng-click="incdecCounter($index, 'inc')" style="color:black;vertical-align: -8%;font-size:20px;" icon="ion-arrow-left-b"></ons-icon>
+                    <input class="inc_input" readonly="true" type="text" style="font-size:19px;" value="{{cart.dupcount}}">
+                    <ons-icon class="dec auto_button" ng-click="incdecCounter($index, 'dec')" style="color:black;vertical-align: -8%;font-size:20px;" icon="ion-arrow-right-b"></ons-icon>
+                </div>
+            </div>
+            <div style="margin-left:5%;margin-right:5%; font-family:opensanslight;font-size: 1.1rem;">{{cart.plusname}}</div>
+            <div style="display:table;margin-right:5%;margin-left:45%;width:50%;">
+                <!-- <div style="display:table-cell;vertical-align:top;"></div> -->
+                <div style="display:table-cell;vertical-align:top;text-align:left;">
+                    <div ng-click="onClear($index)" style="border: solid 1px; vertical-align:middle;text-align:center;padding-top:2px;height:15px;font-size:15px;">Clear</div>
+                </div>
+                <div style="display:table-cell;vertical-align:top;font-size:1.3rem;text-align:right;font-weight:normal;">CLP ${{cart.price}}
+                </div>
+            </div>
+        </div>
+        <div style="width: 92%;margin: 1%; margin-top:5%;display: table;font-family: opensanslight;font-weight: bold;font-size:1.3rem;margin-right: 7%;">
+            <div style="display: table-cell;width: 150px;text-align: right;">Total Parcial</div>
+            <div style="text-align: right;display: table-cell;">${{subTotal}}</div>
+        </div>
+        <div style="width: 92%;margin: 1%;display: table;font-family: BebasNeueLight;font-weight: bold;font-size:1.3rem;margin-right: 7%;">
+            <div style="display: table-cell;width: 150px;text-align: right;">
+                <label style="margin-right:2px;" class="checkbox">
+                    <input type="checkbox" id="check_use_tip" ng-click="onCheckTips();">
+                    <div class="checkbox__checkmark" style="margin-top:-3px;"></div>
+                    <span style="font-family: opensanslight;font-weight: bold;font-size:1.5rem;">Propina @ 10%</span>
+                </label></div>
+            <div style="vertical-align: middle;text-align: right;display: table-cell;">${{tips}}</div>
+        </div>
+        <!-- <div style="width: 92%;margin: 1%; display: table;font-family: BebasNeueLight;font-weight: bold;font-size:1.3rem;margin-right: 7%;">
+            <div style="display: table-cell;width: 150px;text-align: right;"><u>Apply Promo Code</u></div>
+            <div style="text-align: right;display: table-cell;">-${{promoto}}</div>
+        </div> -->
+        <div style="width: 92%;margin: 1%;display: table;font-family: opensansbold;font-weight: bold;font-size: 1.5rem;margin-right: 7%;">
+            <div style="display: table-cell;width: 150px;text-align: right;">Total</div>
+            <div style="text-align: right;display: table-cell;">${{totalPrice}}</div>
+        </div>
+        <div style="height:10px;"></div>
+        <div style="width: 92%;margin: 1%;display: table; margin-right: 7%;">
+        <div style="display:table-cell;width:60%;vertical-align:top;"></div>
+        <div style="display:table-cell;text-align:right;">
+            <!-- <input ng-click="onDonePayment();" class="login-button ng-isolate-scope button effeckt-button button--large slide-left;" style="width:100% !important;font-weight: bold;font-size:1.5rem;vertical-align:middle;line-height:35px;"  type="submit" value="PAY"/>
+ -->
+            <ons-button style="width:100%;margin:0px auto;font-size:1.5rem;font-weight:bold;text-align:center;" class="order_keep" ng-click="onDonePayment();">PAGAR</ons-button>
+        </div>
+        <div style="height:10px;"></div>
+    </div>
+</ons-page>  

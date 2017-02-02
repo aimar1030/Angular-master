@@ -1,0 +1,23 @@
+<ons-navigator animation="slide" var="signin" >
+    <ons-page ng-controller="loginCtrl">
+        <div class="login-page">
+            <div class="login-form">
+                <p class="subtitle"><img src="img/logo.png"/></p>
+                <p class="subtitle">Móvil POS</p>
+                <div class="form-wrapper">
+                    <form name="loginForm" >
+                        <input style="width: 100%;height: 45px;background: white;border: none;box-shadow: none;padding: 8px 8px 0px 8px;font-size: 1.8rem;" type="tel" only-digits ng-model="phno" class="text-input--underbar" placeholder="+56" value=""/><!--  required/> -->
+                        <br>
+                        <input  style="margin-top: 30px;" ng-click="doLogin(phno);" class="login-button ng-isolate-scope button effeckt-button button--large slide-left" type="submit" value="NUEVO"/>
+                    </form>
+                </div>
+            </div>
+            <div ons-keyboard-inactive>
+                <ons-bottom-toolbar>
+                    <input  ng-click="doPendingOrders();" class="pending-order-button ng-isolate-scope button effeckt-button button--large slide-left" type="submit" value="Pendiente"/>
+                    <input  ng-click="doCompletedOrders();" class="completed-order-button ng-isolate-scope button effeckt-button button--large slide-left" type="submit" value="Confirmado"/>
+                </ons-bottom-toolbar>
+            </div>    
+        </div>
+    </ons-page>
+</ons-navigator>

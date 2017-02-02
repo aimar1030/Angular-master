@@ -1,0 +1,71 @@
+<ion-view view-title="Item Details" ng-init="ItemDetailsinit()">
+  <ion-content>
+    <div class="list">
+          <div class="item item-avatar" ng-click="open_other_profile(item.OwnerUniqueID)">
+            <img ng-src="https://www.whybuy.co.il/{{item.OwnerImageUrl}}">
+            <h2>{{item.OwnerUserName}}</h2>
+            <!--p><span class="ion-android-star-outline"></span><span class="ion-android-star-outline"></span><span class="ion-android-star-outline"></span><span class="ion-android-star-outline"></span></p-->
+          </div>
+          <div class="item tabs tabs-secondary ">
+            <span class="tab-item">
+              Price {{item.itemInfo.amountPerTimeUnit}} NIS
+            </span>
+            <span class="tab-item">
+              Deposit {{item.itemInfo.protectionAmount}} NIS
+            </span>
+          </div>
+
+          <div class="item item-body">
+            <h2>{{item.itemInfo.name}}</h2>
+            <p dir="auto">
+              {{item.itemInfo.personalAttributesMap.DESCRIPTION.value}}
+            </p>
+          </div>
+          <div class="item item-body">
+            <div class="item item-image padding" ng-repeat="pic in item.itemInfo.pics.LARGE">
+             <img ng-src="https://www.whybuy.co.il/{{pic.url}}" alt="">
+           </div>
+          </div>
+          <div class="item item-body">
+            <h2>Conditions</h2>
+            <a class="item item-icon-left" ng-repeat="condition in item.itemInfo.conditions">
+              <i class="icon ion-alert-circled"></i>
+                {{condition.description}}
+              </a>
+            <h2>Tags</h2>
+            <a class="subdued" ng-repeat="tag in item.itemInfo.hashTags"> {{tag}} </a>
+            <h2>Cancelation Policy</h2>
+            <a class="subdued">{{item.itemInfo.cancellationPolicy}} </a>
+          </div>
+  </div>
+  <div class="padding">
+    <button class="button button-block button-positive" ng-click="open_send_message_page(item.itemInfo.uniqueID,'from_item')" ng-show="$root.loggedIn">
+        Send Question about the item
+    </button>
+
+  </div>
+  <div scroll="false" data-tap-disabled='true' >
+    <!-- <ui-gmap-google-map center='map.center' zoom='map.zoom' dragging='false' options="map.options" scroll="false"></ui-gmap-google-map> -->
+    <div map-lazy-load="http://maps.google.com/maps/api/js">
+        <map center="{{item.itemInfo.geometry.location.lat}},{{item.itemInfo.geometry.location.lng}}" zoom-control="true" max-zoom="15"
+        min-zoom="10"
+        draggable="false"
+        rotate-control="false"
+        scrollwheel="false"
+        street-view-control="false"
+        disable-default-UI="true"
+        street-view-control="false"></map>
+     </div>
+ </div>
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <button id="send_offer_button" class="button button-block button-calm" ng-click="open_send_offer_page(item._id)" ng-show="$root.loggedIn">
+        Send Offer
+    </button>
+    <div class="col col-100">
+      <a class="col col-100 button button-block button-positive"  href="#/login" ng-hide="$root.loggedIn">
+          Please Login
+      </a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,113 @@
+ons-dialog ons-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ons-dialog div {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ons-dialog {
+    height: 100%;
+}
+
+.button.login-button,.button.pending-order-button, .button.completed-order-button{
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    padding: 2px 6px 3px;
+    border: 2px outset buttonface;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    background-color: buttonface;
+    box-sizing: border-box;
+    margin: 0em;
+    font: normal normal normal 13.3333330154419px/normal Arial;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    background:#ff4e00;
+    font-size: 1.8rem;
+    color:white;
+    font-family:opensanslight,arial;
+}
+
+.payment_page .button-bar__button{
+    background:transparent;
+    border:none;
+}
+
+.payment_page .button-bar__item.cash_button{
+    background: url("../img/cash.png") no-repeat center top;
+}
+
+.payment_page .button-bar__item.card_button{
+    background: url("../img/tarjeta.png") no-repeat center top;
+}
+
+.payment_page .item_columns{
+    border-top:none;
+}
+
+/*:checked + .button-bar__button{
+    background: url("../img/cashactive.png") no-repeat center top;
+}*/
+
+.payment_page .my_button{
+    border:none !important;
+    height: 50px;
+}
+
+.button.login-button{
+    width:40%;
+    font-size:2.2rem;
+}
+
+.button.pending-order-button{
+    background:#2d2a26;
+    width:38%;
+    margin-left: 20px;
+    float: left;
+}
+
+.button.completed-order-button{
+    background:#00ad69;
+    width:40%;
+    float: right;
+    margin-right: 20px;
+}
+
+.text-custom{
+    position: relative;
+    width: 80%;
+    float: right;
+    height: 45px;
+    background: white;
+    border: none;
+    box-shadow: none;
+    padding: 8px 8px 0px 8px;
+    font-size: 1.3rem;
+    border: 1px solid black;
+}
+
+.bottom-bar{
+    background:#88e2d2;
+    height:60px;
+}
+
+.login-page{
+    background: #8add66; /* Old browsers */
+    background: -moz-linear-gradient(top,  #8add66 0%, #88e2d2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8add66), color-stop(100%,#88e2d2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #8add66 0%,#88e2d2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #8add66 0%,#88e2d2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #8add66 0%,#88e2d2 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #8add66 0%,#88e2d2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8add66', endColorstr='#88e2d2',GradientType=0 ); /* IE6-9 */
+}

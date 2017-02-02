@@ -1,0 +1,76 @@
+<ons-page class="receipts" ng-controller="receiptsCtrl" ng-init="start();">
+    <ons-toolbar modifier="opacity">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center" style="font-size: 1.8rem;font-family: opensanslight;">
+            órdenes
+        </div>
+        <div class="right">
+        </div>
+    </ons-toolbar>
+    <ons-list>
+        <div style="margin-top:2%;text-align: center;" ng-show="groups.length == 0"> {{errmsg}} </div>
+        <div ng-repeat="group in groups" style="margin-top:-15px;">
+            <ons-list-item ng-click="toggleGroup(group)" class="title" ng-class="{active:isGroupShown(group)}">
+                <ons-row>
+                    <ons-col>
+                        <div style=" width:14%;margin-top: 3%;" class="receipt_title"><img src="img/chile.png"/></div>
+                        <div style=" width:58%;margin-top: 2%;" class="receipt_title">
+                            <div style="font-family: BebasNeueRegular;font-size: 1rem;">ORDER NUMBER: {{group.oid}}</div>
+                            <div style="font-family: BebasNeueRegular;font-size: 1rem;">PHONE NUMBER: {{group.telnum}}</div>
+                        </div>
+                        <div ng-show="group.status != 'PENDING'" style="width: 22%;margin-top: 2%;float: right;text-align: right;margin-right: 1%;" class="receipt_title">
+                            <span style="font-size: 1rem;font-family:BebasNeueBold;">{{group.tim}}</span>
+                            <span style="font-size: 1.4rem;font-family: BebasNeueBold;">{{group.dat}}</span>
+                        </div>
+                        <div ng-show="group.status == 'PENDING'" style="width: 22%;margin-top: 2%;float: right;text-align: right;margin-right: 1%;" class="receipt_title">
+                            <div ng-click="doPendingEdit(group);" style="margin-left: 2%;width: 13%;text-decoration: underline;text-align: left;">Editar</div>
+                        </div>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <div class="accordian_content" ng-show="isGroupShown(group)">
+                <div style="position:relative;margin-left:4%;padding-top: 5px;padding-bottom:5px;width:96%;">
+                    <div style="font-family: BebasNeueRegular;font-size: 1rem;margin-top:5px;">ORDER NUMBER: {{group.oid}}</div>
+                    <div style="font-family: BebasNeueRegular;font-size: 1rem;margin-top:5px;margin-bottom:5px;">PHONE NUMBER: {{group.telnum}}</div>
+                </div>
+                <ons-row ng-show="group.status != 'PENDING'">
+                    <ons-col>
+                        {{group.ocode.substr(0, 1)}}
+                    </ons-col>
+                    <ons-col>
+                        {{group.ocode.substr(1, 1)}}
+                    </ons-col>
+                    <ons-col>
+                        {{group.ocode.substr(2, 1)}}
+                    </ons-col>
+                    <ons-col>
+                        {{group.ocode.substr(3, 1)}}
+                    </ons-col>
+                </ons-row>
+                <h2 ng-show="group.status != 'PENDING'" style="display:block;margin-left: 4%;margin-top: 0%;margin-bottom: 0%;font-size: 1.5rem;font-family:opensansbold;">Order</h2>
+                <ons-row style="height:210px;" ng-show="group.status != 'PENDING'">
+                    <ons-col class="main_order_detail">
+                        <div style="overflow-y: scroll !important;width:100%;height:125px;">
+
+                            <ons-row ng-repeat="dets in group.detail track by $index">
+                                <div style="width:10%">{{$index + 1}}</div>
+                                <div style="width:50%;text-align: left;">{{dets.name}}</div>
+                                <div style="width:20%">X {{dets.dupcount}}</div>
+                                <div style="width:20%">{{dets.dupcount * dets.price}}</div>
+                            </ons-row>
+                        </div>
+                    </ons-col>
+                </ons-row>
+                <ons-row class="order_total" style="position:relative;margin-top:10px;padding-top:10px;">
+                    <div ng-show="group.status != 'PENDING'" style="width:100%;text-align: right;">Sub Total : {{group.subtotal}}</div>
+                    <div ng-show="group.status != 'PENDING'" style="width:100%;text-align: right;">Tip @ 10% : {{group.tip}}</div>
+                    <div ng-show="group.status == 'PENDING'" ng-click="doPendingDel(group);" style="margin-left: 2%;width: 13%;text-decoration: underline;text-align: left;">Borrar</div>
+                    <div ng-show="group.status == 'PENDING'" style="font-size: 1.2rem;font-weight: bold;width: 70%;text-align: right;">TOTAL : CLP $ {{group.total}}</div>
+                    <div ng-show="group.status != 'PENDING'" style="font-size: 1.2rem;font-weight: bold;width: 100%;text-align: right;">TOTAL : CLP $ {{group.total}}</div>
+                </ons-row>
+            </div>
+        </div>
+    </ons-list>
+</ons-page>

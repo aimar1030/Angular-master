@@ -1,0 +1,59 @@
+<ion-view view-title="Search">
+  <ion-content>
+
+      <h2 ng-hide="results.length > 0 " class="padding" style="text-align:center">Search</h2>
+      <h2 ng-show="empty_result" class="padding" style="text-align:center">No results found</h2>
+      <h3 ng-show="results" style="text-align:center"> Results without filter ({{results.length}}) </h3>
+      <div class="padding">
+        <button class="button button-block button-positive" ng-click="open_results_on_map(results)" ng-show="results.length > 0">
+            Show results on map
+        </button>
+      </div>
+      <div class="list" ng-show="results.length > 0 ">
+        <h5 ng-show="geolocation" class="padding">Max distance ({{distance_range}}) Km</h5>
+        <div ng-show="geolocation" class="item range range-positive">
+          0
+          <i class="icon ion-map"></i>
+          <input type="range" name="volume" min="0" max="1020" value="1020" ng-model="distance_range">
+          <i class="icon ion-map"></i>
+          1200
+        </div>
+        <h5 class="padding">Max Price ({{max_price}}) NIS</h5>
+        <div class="item range range-positive">
+          0
+          <i class="icon ion-cash"></i>
+          <input type="range" name="volume" min="0" max="1500" value="1500" ng-model="max_price">
+          <i class="icon ion-cash"></i>
+          1500
+        </div>
+      </div>
+     <div class="list card padding" ng-repeat="result in results" ng-init="set_distance(result)" ng-click="open_item(result._id)" ng-show="(max_price > result.data.amountPerTimeUnit)&&((getDistance(location_array[result._id],current_location) < distance_range)||!geolocation)">
+          <div class="item">
+            <h2>{{result.data.name}}</h2>
+          </div>
+          <div class="item item-image">
+            <img ng-src="https://www.whybuy.co.il/{{result.data.pics.LARGE[0].url}}">
+          </div>
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-cash"></i>
+            Price per day: {{result.data.amountPerTimeUnit}} NIS
+          </a>
+          <a class="item item-icon-left assertive" href="#">
+            <i class="icon ion-lock-combination"></i>
+            Deposit: {{result.data.protectionAmount}} NIS
+          </a>
+          <a class="item assertive" href="#" ng-show="geolocation">
+            Distance: {{getDistance(location_array[result._id],current_location)|number:2}} Km
+          </a>
+    </div>
+
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+          <input type="text" placeholder="Search for an item to rent" ng-model="search_term">
+      </label>
+      <button type="submit" class="button button-small button-positive" ng-click="perform_search(search_term)">
+        <span ng-hide="processing">Search</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner>
+      </button>
+  </ion-footer-bar>
+</ion-view>

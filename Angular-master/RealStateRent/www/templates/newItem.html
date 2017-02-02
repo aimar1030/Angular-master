@@ -1,0 +1,139 @@
+<ion-view view-title="New Item" ng-init="editItemInit()">
+  <ion-content>
+
+    <div ng-show="profile_loaded">
+          <div class="padding" ng-show="(!$root.profile.userTrustInfo.emailVerified) || (!($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.PAYPAL_ID) || ($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.BANK_ACCOUNT_NUMBER))">
+            <p class="assertive"> Before you list a new item please do the following: </p>
+
+            <div ng-hide="$root.profile.userTrustInfo.emailVerified">
+              <div class="padding">
+                  <a class="button button-block button-positive" ng-click="email_validation()">Send confirmation email</a>
+              </div>
+              <div class="padding">
+                  <a class="button button-block button-positive" ng-click="update_profile()">Refresh after email confirmation</a>
+              </div>
+            </div>
+             <div ng-hide="($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.PAYPAL_ID) || ($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.BANK_ACCOUNT_NUMBER)">
+               <div class="list">
+                   Please choose how you would like to recieve money
+                   <label class="item item-input item-select">
+                      <div class="input-label">
+                          Please choose how you would like to recieve money
+                      </div>
+                      <select ng-model="selected_payment">
+                        <option value="">Select your option</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank">Bank Account</option>
+                      </select>
+                    </label>
+                    <label ng-show="selected_payment=='paypal'" class="item item-input ">
+                            <input type="text" ng-model="paypal_id" placeholder="Please Enter Your PayPal ID">
+
+                     </label>
+                     <div>
+                        <a ng-show="selected_payment=='paypal'" class="button button-block button-positive" ng-click="submit_paypal_id(paypal_id)">Update PayPal ID</a>
+                     </div>
+                     <label ng-show="selected_payment=='bank'" class="item item-input ">
+                        <div class="input-label">
+                             <input type="text" ng-model="bank_account_name" placeholder="Name of Bank Account owner">
+                        </div>
+                      </label>
+                     <label ng-show="selected_payment=='bank'" class="item item-input ">
+                        <div class="input-label">
+                             <input type="text" ng-model="bank_code" placeholder="Bank code">
+                        </div>
+                      </label>
+                      <label ng-show="selected_payment=='bank'" class="item item-input ">
+                         <div class="input-label">
+                              <input type="text" ng-model="bank_branch" placeholder="Bank branch">
+                         </div>
+                       </label>
+                       <label ng-show="selected_payment=='bank'" class="item item-input ">
+                          <div class="input-label">
+                               <input type="text" ng-model="bank_account_number" placeholder="Bank Account ID">
+                          </div>
+                        </label>
+                        <div >
+                            <a ng-show="selected_payment=='bank'" class="button button-block button-positive" ng-click="submit_payme_seller(bank_account_name,bank_code,bank_branch,bank_account_number)">Update Back Account Details</a>
+                        </div>
+                </div>
+             </div>
+
+          </div><!-- end of validating user email and payment method -->
+    </div><!-- end of profile loaded part -->
+
+    <form ng-show="($root.profile.userTrustInfo.emailVerified) && (($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.PAYPAL_ID) || ($root.profile.userIdentity.marketRelatedInfo.sellerInfo.sellerInfoMap.BANK_ACCOUNT_NUMBER))" name="addProductForm" flow-name="obj.flow" flow-init="{query: {'random_token': random_token}}" flow-files-submitted="upload_files($event,$flow)">
+    <div class="list card">
+      <div class="row">
+          <span type="file" multiple="multiple" flow-btn flow-attrs="{accept:'image/*'}" accept="image/*" class="col col-50 col-offset-25  button button-calm" >Add Images</span>
+      </div>
+      <div class="padding">
+        <h2 ng-show="flow_image_files.length > 0 " style="text-align:center">New Images</h2>
+        <div ng-repeat="file in flow_image_files track by $index" style="text-align:center;margin-bottom:5px;">
+          <div class="col col-100">
+              <img flow-img="file" alt=""  style="width:auto;max-height:200px;margin-left: auto;margin-right: auto;object-fit:contain"/>
+          </div>
+          <div class="col col-100">
+            <button class=" button button-assertive" ng-click="delete_file(file,$index)"> Cancel </button>
+          </div>
+        </div>
+      </div>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !item_name}">
+        <span class="input-label">Item Name</span>
+        <input type="text" placeholder="Item Name" ng-model="item_name">
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !item_description}">
+        <span class="input-label" ng-class="{red: fillout_fields && !item_description}">Item Description</span>
+        <textarea type="text" placeholder="Item Description" ng-model="item_description" ng-class="{red: fillout_fields && !item_description}"></textarea>
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !item_rules}">
+        <span class="input-label" ng-class="{red: fillout_fields && !item_rules}">My Rules</span>
+        <textarea placeholder="My Rules" ng-model="item_rules" ng-class="{red: fillout_fields && !item_rules}"></textarea>
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !price}">
+        <span class="input-label" ng-class="{red: fillout_fields && !price}">Price Per Day</span>
+        <input type="number" placeholder="Price Per Day" ng-model="price" ng-class="{red: fillout_fields && !price}">
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !deposit}">
+        <span class="input-label" ng-class="{red: fillout_fields && !deposit}">Deposit</span>
+        <input type="number" placeholder="Deposit" ng-model="deposit" ng-class="{red: fillout_fields && !deposit}">
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !address}">
+        <span class="input-label" ng-class="{red: fillout_fields && !address}">Address</span>
+        <textarea placeholder="Address" ng-model="address" ng-class="{red: fillout_fields && !address}"></textarea>
+      </label>
+      <label class="item item-input item-floating-label" ng-class="{red: fillout_fields && !tags}">
+        <span class="input-label" ng-class="{red: fillout_fields && !tags}">Tags</span>
+        <textarea placeholder="Tags - seperate with comma sign" ng-model="tags" ng-class="{red: fillout_fields && !tags}"></textarea>
+      </label>
+      <label class="item item-input item-select" ng-class="{red: fillout_fields && !cancel_policy}">
+        <div class="input-label" ng-class="{red: fillout_fields && !cancel_policy}">
+         Cancellation Policy
+        </div>
+        <select ng-model="cancel_policy" ng-class="{red: fillout_fields && !cancel_policy}">
+          <option value="none" ng-class="{red: fillout_fields && !cancel_policy}">None</option>
+          <option value="flexible" ng-class="{red: fillout_fields && !cancel_policy}">Flexible</option>
+          <option value="strict" ng-class="{red: fillout_fields && !cancel_policy}">Strict</option>
+        </select>
+      </label>
+      <div class="item item-image" ng-repeat="pic in pics">
+        <img ng-src="https://www.whybuy.co.il/{{pic.url}}" alt="">
+        <dir class="row">
+          <button class="button col col-50 col-offset-25 button-assertive" ng-click="remove_image(pic.url)"> Delete Image </button>
+        </dir>
+      </div>
+      <div class="item">
+            <a href="" ng-click="open_cancelation_policy_help()"> What's Cancellation Policy ?</a>
+      </div>
+    </div>
+    <div class="row">
+      <div style="text-align:center" class="assertive col col-50 col-offset-25" ng-show="uploading">
+        <h2>Uploading images : {{current_progress}} %</h2>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="add_product(tags,address,deposit,price,item_rules,item_description,item_name,cancel_policy,addProductForm)"><span ng-hide="processing">Save</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+    </div>
+  </form>
+  </ion-content>
+</ion-view>

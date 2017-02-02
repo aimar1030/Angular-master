@@ -1,0 +1,53 @@
+<ons-navigator animation="slide" var="home">
+<ons-page class="menu_html" ng-controller="drinkCtrl" ng-init="start()">
+    <ons-toolbar modifier="opacity">
+        <div class="left" ng-click="menu.setMainPage('login.html', {closeMenu: true});">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center" style="text-align: center;font-family: opensanslight;">
+            <div>Menú</div>
+        </div>
+        <div class="right">
+            <ons-toolbar-button ng-click="onOpenCart();" class="coupon_icon"><ons-icon icon="fa-plate" size="40px" style="font-family: icomoon;margin-top:-2px;"></ons-icon><div class="notification menu-notification" style="font-size:13px;margin-left:-10px;" ng-show="cart_num > 0">{{cart_num}}</div></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div class="app-page">
+        <div style="margin:2%;">
+            <div class="category_select" style="">
+                <select id="drink_category_select" class="ng-valid ng-dirty" ng-model="drinkCategory" ng-change="onChangeCategory()" ng-options="item for item in category_array">
+                </select>
+            </div>
+        </div>
+        <div style="width:100%;border-bottom: solid 1px black;"></div>
+        <div>
+            <div ng-repeat="drinks in drink_list track by $index" ng-show="canShow($index)">
+                <h2 style="display:block;margin-left: 2%;margin-top: 0%;margin-bottom: 0%;font-size: 1.5rem;font-family:opensansbold;">{{category_array[$index + 1]}}</h2>
+                <ons-list modifier="inset" id="list-list" style="margin-top: 0px; border:none;" class="custom_list_view">
+                    <ons-list-item ng-repeat="items in drinks" style="margin-bottom:0px" ng-click="showDlg('adddrink.html',items);">
+                        <!-- <div class="app-open-desc"> -->
+                        <div class="food_list_item">
+                            <img ng-src="{{items.imgurl}}"/> 
+                            <div class="food_list_item_details">
+                                <div class="food_list_item_details-1">
+                                    <div class="restaurant_title">
+                                        <div style="font-size:18px;">{{items.drinkname}}</div>
+                                        <div class="food_list_item_label" style="margin-top:10px;">
+                                            <div style="font-size:16px;display:inline-block;margin-left:3px;">{{items.drinkprice}}</div>
+                                        </div>
+                                    </div>
+                                    <div style="display:table-cell;width:30px;vertical-align:middle">
+                                    {{items.addcount}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <!-- </div> -->
+                    </ons-list-item>
+                </ons-list>
+            </div>
+        </div>
+    </div>
+</ons-page>
+</ons-navigator>

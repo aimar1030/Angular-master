@@ -1,0 +1,41 @@
+<ion-view view-title="Feedback" ng-init="feedbackInit()">
+  <ion-content>
+    <form  ng-submit="send_feedback(transaction.id,feedback_text,'owner')">
+      <div class="card">
+           <div class="list">
+             <label class="item item-input">
+               <textarea type="text" placeholder=" Describe your rent expirience " ng-model="feedback_text"></textarea>
+             </label>
+
+             <div class="item">
+                <h4 dir="auto"> Overall Satisfaction </h4>
+                <dir class="row">
+                  <div style="text-align:center" ng-class="{active_rating: feedback_attributes['overall_satisfaction'] == -1 }" class="icon ion-thumbsdown col col-33" ng-click="set_star(-1,'overall_satisfaction')"></div>
+                  <div style="text-align:center" ng-class="{active_rating: feedback_attributes['overall_satisfaction'] == 0 }" class="overall_satisfaction col col-33" ng-click="set_star(0,'overall_satisfaction')">Netural</div>
+                  <div style="text-align:center" ng-class="{active_rating: feedback_attributes['overall_satisfaction'] == 1 }" ng-click="set_star(1,'overall_satisfaction')" class="icon ion-thumbsup col col-33"></div>
+                </dir>
+             </div>
+             <div class="item">
+               <h4 dir="auto"> Product returned without damage </h4>
+               <div class="row" style="text-align:center">
+                 <span ng-click="set_star(1,'return_condition')" ng-class="{active_rating: feedback_attributes['return_condition'] > 0 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(2,'return_condition')" ng-class="{active_rating: feedback_attributes['return_condition'] > 1 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(3,'return_condition')" ng-class="{active_rating: feedback_attributes['return_condition'] > 2 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(4,'return_condition')" ng-class="{active_rating: feedback_attributes['return_condition'] > 3 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(5,'return_condition')" ng-class="{active_rating: feedback_attributes['return_condition'] > 4 }" class="ion-ios-star col col-20"></span>
+               </div>
+             </div>
+             <div class="item">
+               <h4 dir="auto"> Communication and responsiveness </h4>
+               <div class="row" style="text-align:center">
+                <span ng-click="set_star(1,'responsiveness')" ng-class="{active_rating: feedback_attributes['responsiveness'] > 0 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(2,'responsiveness')" ng-class="{active_rating: feedback_attributes['responsiveness'] > 1 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(3,'responsiveness')" ng-class="{active_rating: feedback_attributes['responsiveness'] > 2 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(4,'responsiveness')" ng-class="{active_rating: feedback_attributes['responsiveness'] > 3 }" class="ion-ios-star col col-20"></span><span ng-click="set_star(5,'responsiveness')" ng-class="{active_rating: feedback_attributes['responsiveness'] > 4 }" class="ion-ios-star col col-20"></span>
+               </div>
+             </div>
+           </div>
+      </div>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-center">
+          </div>
+        </div>
+        <button type="submit" class="button button-block button-positive"><span ng-hide="processing">Send</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+      </div>
+     </form>
+  </ion-content>
+</ion-view>

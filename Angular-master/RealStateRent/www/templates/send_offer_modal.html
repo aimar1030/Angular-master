@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title" style="text-align:center">Send Offer</h1>
+    <a  class="button button-dark button-small" ng-click="modal.hide()">Close</a>
+  </ion-header-bar>
+  <ion-content>
+    <div class="padding">
+      <div class="list list-inset">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Deposit</span>
+          <input type="number" ng-model="deposit" placeholder="deposit" min="0">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Price Per Day</span>
+          <input type="number" ng-model="price_per_day" placeholder="price per day" min="0" ng-change="on_price_deposit_change(price_per_day)">
+        </label>
+      </div>
+      <ionic-datepicker input-obj="startDatepickerObject">
+        <button class="button button-block button-positive"><span ng-hide="start_date">Select Start Date</span><span ng-show="start_date">{{start_date|date}}</span></button>
+      </ionic-datepicker>
+      <ionic-datepicker input-obj="endDatepickerObject">
+        <button class="button button-block button-positive"><span ng-hide="end_date">Select End Date</span><span ng-show="end_date">{{end_date|date}}</span></button>
+      </ionic-datepicker>
+          <div ng-show="end_date&&start_date">
+              Total days: {{ period }}<br>
+              Fee: {{ calculated_fee |number : 2}} <br>
+              Total price: {{total_price | number : 2}} <br>
+              <hr>
+              Total price + fee: {{ calculated_fee + total_price | number : 2}}
+              <button class="button button-block button-positive activated" ng-click="rent_req_new(item.itemInfo.uniqueID,price_per_day,deposit)">Send</button>
+          </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

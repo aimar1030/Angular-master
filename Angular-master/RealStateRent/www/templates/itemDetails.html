@@ -1,0 +1,74 @@
+<ion-view view-title="Item Details" ng-init="ItemDetailsinit()">
+  <ion-content>
+    <div class="padding">
+      <a href="#/transactions/{{item.itemInfo.uniqueID}}" class=" button-block button button-royal">
+        <i class="icon ion-cash"></i>
+        Transactions
+        <span class="badge badge-assertive">{{item.itemInfo.activeTransactions}}</span>
+      </a>
+    </div>
+    <div class="list card">
+
+    <div class="item item-thumbnail">
+      <img ng-src="https://www.whybuy.co.il/{{item.itemInfo.pics.SMALL[0].url}}">
+      <h2 dir="auto" style="text-align:left">{{item.itemInfo.name}}</h2>
+      <p></p>
+    </div>
+    <div class="item tabs tabs-secondary ">
+      <span class="tab-item" href="#">
+        Price {{item.itemInfo.amountPerTimeUnit}} NIS
+      </span>
+      <span class="tab-item" href="#">
+        Deposit {{item.itemInfo.protectionAmount}} NIS
+      </span>
+    </div>
+
+    <div class="item item-body">
+      <p dir="auto">
+        {{item.itemInfo.personalAttributesMap.DESCRIPTION.value}}
+      </p>
+      <p>
+        <a class="subdued" ng-hide="item.itemInfo.personalAttributesMap.ACTIVE.value">Item is Frozen</a>
+      </p>
+    </div>
+    <div class="item item-body">
+      <div class="item item-image" ng-repeat="pic in item.itemInfo.pics.MEDIUM">
+       <img ng-src="https://www.whybuy.co.il/{{pic.url}}" alt="">
+     </div>
+    </div>
+    <div class="item item-body">
+      <h2>Conditions</h2>
+      <a class="item item-icon-left" ng-repeat="condition in item.itemInfo.conditions">
+        <i class="icon ion-alert-circled"></i>
+          {{condition.description}}
+        </a>
+      <h2>Tags</h2>
+      <a class="subdued" ng-repeat="tag in item.itemInfo.hashTags"> {{tag}} </a>
+      <h2>Cancelation Policy</h2>
+      <a class="subdued">{{item.itemInfo.cancellationPolicy}} </a>
+    </div>
+  </div>
+  <div class="padding">
+    <div class="row">
+           <button class=" col col-40 button button-assertive" ng-click="remove_item(item.itemInfo.uniqueID)">
+             <i class="icon ion-trash-a"></i>
+             Delete
+          </button>
+          <a href="#/editItem/{{item.itemInfo.uniqueID}}" class=" col col-40 col-offset-10 button button-positive">
+              <i class="icon ion-edit"></i>
+              Edit Item
+          </a>
+    </div>
+    <div class="row">
+      <a ng-show="item.itemInfo.personalAttributesMap.ACTIVE.value" ng-click="set_item_active(item.itemInfo.uniqueID,false,item.itemInfo.uniqueID)" class="button  button-block button-calm col col-100">
+          <i class="icon ion-ios-snowy"></i>
+          Freeze (Temporary stop renting item)
+      </a>
+      <a ng-hide="item.itemInfo.personalAttributesMap.ACTIVE.value" ng-click="set_item_active(item.itemInfo.uniqueID,true,item.itemInfo.uniqueID)" class="button  button-block button-calm col col-100">
+          <i class="icon ion-ios-sunny-outline"></i>
+          Unreeze (Resume renting item)
+      </a>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

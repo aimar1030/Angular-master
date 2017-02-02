@@ -1,0 +1,28 @@
+<ion-view view-title="Updates" ng-init="myUpdatesInit()">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="myUpdatesInit()">
+    </ion-refresher>
+    <ion-item ng-show="loading_items" class="item">
+      <h2>Loading Latest Updates... Please wait a moment </h2>
+    </ion-item>
+    <ion-item ng-show="!loading_updates && no_updates" class="item">
+      <h2> Seems pretty quiet </h2>
+    </ion-item>
+    <ion-list>
+      <ion-item ng-click="handle_click(notification)" class="item item-icon-right" collection-repeat="notification in notifications">
+        <i ng-show="notification.isMessageRead" class="icon ion-android-done"></i>
+        <h3 dir="auto" style="text-align:left">
+          <span style="white-space:normal" ng-show="notification.msgType=='TRANSACTION_UPDATE'">You have transaction update for {{notification.notification_additional_info.NAME}}</span>
+          <span style="white-space:normal" ng-show="notification.msgType=='CONVERSATION_UPDATE'">You have new message regaring {{notification.notification_additional_info.NAME}}</span>
+          <span style="white-space:normal" ng-show="notification.msgType=='NEW_OFFER'">You have new offer for {{notification.notification_additional_info.NAME}}</span>
+          <span style="white-space:normal" ng-show="notification.msgType=='SYSTEM'">Important notification</span>
+        </h3>
+        <p style="white-space:normal">
+          {{notification.messageTime|date: 'd/M/yyyy HH:mm'}}
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

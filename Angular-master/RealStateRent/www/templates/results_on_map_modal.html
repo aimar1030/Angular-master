@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title" style="text-align:center">Map Results</h1>
+    <a  class="button button-dark button-small" ng-click="modal.hide()">Close</a>
+  </ion-header-bar>
+  <ion-content>
+    <div class="padding">
+      <div map-lazy-load="http://maps.google.com/maps/api/js">
+          <map center="32.0667,34.8000" zoom-control="true" max-zoom="15"
+          min-zoom="9"
+          zoom="9"
+          draggable="true"
+          rotate-control="false"
+          scrollwheel="false"
+          street-view-control="false"
+          disable-default-UI="true"
+          street-view-control="false" style="width:100%;height:500px;"
+          data-tap-disabled="true">
+          <marker
+     position="[{{result.data.geometry.location.lat}},{{result.data.geometry.location.lng}}]"
+     title="{{result.data.name}}"
+     animation="Animation.DROP"
+     draggable="false"
+     visible="true"
+     on-click="marker_click(var)"
+     url="#/item/{{result._id}}"
+     ng-repeat="result in results"></marker>
+        </map>
+       </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

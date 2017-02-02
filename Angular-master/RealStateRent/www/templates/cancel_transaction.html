@@ -1,0 +1,21 @@
+<ion-view view-title="Cancel Transaction" ng-init="cancelTransactionInit()">
+  <ion-content>
+    <form  ng-submit="rent_req(transaction.id,'REQUESTOR_SENT_CANCELLATION',cancelation_text,transaction.itemID)">
+      <h3 ng-hide="transaction.currentState=='REQUESTOR_SENT_OFFER'||transaction.currentState=='OWNER_RECEIVED_OFFER'||transaction.currentState=='OWNER_ACCEPT_OFFER'||transaction.currentState=='REQUESTOR_RECEIVED_ACCEPT'" class="padding assertive"> At this stage there might be non refundable fees </h3>
+      <div class="card">
+           <div class="list">
+             <label class="item item-input">
+               <textarea type="text" placeholder="I would like to cancel because..." ng-model="cancelation_text"></textarea>
+             </label>
+           </div>
+      </div>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-center">
+          </div>
+        </div>
+        <button type="submit" class="button button-block button-positive"><span ng-hide="processing">Send</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+      </div>
+     </form>
+  </ion-content>
+</ion-view>

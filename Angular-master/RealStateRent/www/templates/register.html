@@ -1,0 +1,33 @@
+<ion-view view-title="Sign Up">
+  <ion-content>
+    <h2 class="padding" style="text-align:center">Please sign up</h2>
+    <form>
+      <div class="card">
+           <div class="list">
+             <label class="item item-input">
+               <input type="text" ng-model="full_name" id="full_name" placeholder="Please Enter Your Full Name" required>
+             </label>
+             <label class="item item-input">
+               <input type="email" ng-model="user_name" placeholder="Enter your email" required>
+             </label>
+             <label class="item item-input">
+               <input type="password" ng-model="password" placeholder="Enter a password" required>
+             </label>
+             <ionic-datepicker input-obj="birthdateObj" class="item item-input" >
+               <button class="button button-positive" style="margin-left: auto;margin-right: auto;"><span ng-hide="birthdate">Select your birthdate</span><span ng-show="birthdate">{{birthdate|date}}</span></button>
+             </ionic-datepicker>
+             <label class="item item-input">
+               <input type="tel" ng-model="phone" placeholder="Enter your phone number incluing +972" required>
+             </label>
+           </div>
+      </div>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-center">
+          </div>
+        </div>
+        <button ng-click="signup(full_name,user_name,password,phone)" type="submit" class="button button-block button-positive"><span ng-hide="processing">Sign Up</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+      </div>
+     </form>
+  </ion-content>
+</ion-view>

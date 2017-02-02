@@ -1,0 +1,32 @@
+<ion-view view-title="Login" class="login">
+  <ion-content>
+    <h2 class="padding login_label" style="text-align:center">Please Login</h2>
+    <form  ng-submit="perform_login(user_name,password)">
+      <div class="card">
+           <div class="list">
+             <label class="item item-input">
+               <input type="email" placeholder="Please Enter Username" ng-model="user_name">
+             </label>
+             <label class="item item-input">
+               <input type="password" placeholder="Please Enter Password" ng-model="password">
+             </label>
+           </div>
+      </div>
+      <div class="padding">
+        <div class="row">
+          <div class="col col-center">
+          </div>
+        </div>
+        <button type="submit" class="button button-block button-positive icon-left ion-log-in login_btn"><span ng-hide="processing">Login</span><ion-spinner class="padding-right" ng-show="processing"></ion-spinner></button>
+      </div>
+     </form>
+     <div style="text-align:center" class="padding">
+       <button class="button button-block button-positive fb_btn" ng-click="authenticate('facebook')"><img src="imgs/facebook-icon.png" class="fb_img"><span ng-hide="facebook_login_in_progress">Login/Sign Up with Facebook </span><ion-spinner class="padding-right" ng-show="facebook_login_in_progress"></ion-spinner></button>
+     </div>
+     <div style="text-align:center" class="padding">
+       <a class="button button-block icon-left ion-email button-positive signup_btn" href="#/register"> Sign up with Email</a>
+       By signing up, I agree to WhyBuy's <a href="#/terms" class="term-link"><span>Terms of Service</span></a> and <a href="" ng-click="open_link('https://www.whybuy.co.il/private_policy.html')" class="privacy-link"><span>Privacy Policy</span></a>.
+       <a class="button button-block button-assertive" ng-click="open_password_reset_modal()"> Reset Password </a>
+     </div>
+  </ion-content>
+</ion-view>

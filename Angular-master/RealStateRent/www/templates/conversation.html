@@ -1,0 +1,26 @@
+<ion-view view-title="My Message" ng-init="conversationInit()">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="conversationInit()">
+    </ion-refresher>
+      <div class="list">
+        <div class="item" ng-show="loading_thread_messages">
+          Loading...
+        </div>
+        <div class="row" collection-repeat="message in messages">
+          <div ng-class="{'my_bubble col col-50':message.sender == my_uniqid,'other_bubble col col-offset-50':message.sender != my_uniqid}">
+            <p dir="auto">{{message.textMessage}}</p>
+          </div>
+        </div>
+      </div>
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <label class="item-input-wrapper">
+      <input id="message_text" type="text" placeholder="Enter your message"  ng-model="message_text">
+    </label>
+    <button class="button button-small button-positive" ng-click="send_message(message_text)">
+      Send
+    </button>
+  </ion-footer-bar>
+</ion-view>

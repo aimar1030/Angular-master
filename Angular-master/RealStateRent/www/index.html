@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:35729 http://*.google.com ">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/ng-tags-input.min.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/PushNotification.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="lib/ng-flow/dist/ng-flow-standalone.min.js"></script>
+    <script src="lib/ng-websocket/ng-websocket.js"></script>
+    <script src="lib/satellizer/satellizer.min.js"></script>
+    <script src="js/ng-map.min.js"></script>
+    <script src="lib/moment/min/moment-with-locales.min.js"></script>
+    <script src="js/itemsCtrl.js"></script>
+    <script src="js/rentsCtrl.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="js/ng-tags-input.min.js"></script>
+
+
+  </head>
+  <body ng-app="whybuy">
+    <ion-side-menus enable-menu-with-back-views="true">
+          <ion-side-menu-content>
+                <ion-nav-bar class="bar-stable">
+                  <ion-nav-back-button>
+                  </ion-nav-back-button>
+                      <ion-nav-buttons side="right">
+                        <button menu-toggle="" class="button button-icon button-clean ion-navicon"></button>
+                      </ion-nav-buttons>
+                </ion-nav-bar>
+                <ion-nav-view>
+                </ion-nav-view>
+          </ion-side-menu-content>
+          <ion-side-menu name="menuContent" side="left" drag-content="true" edge-drag-threshold="true">
+              <ion-scroll direction="y">
+                  <ion-item menu-close="" ng-hide="$root.loggedIn" href="#/login">Login</ion-item>
+                  <ion-item style="text-align:center" ng-show="$root.loggedIn"><img id="profile_image" ng-src="{{$root.handle_profile_image($root.profile.userIdentity.imageUrl)}}" alt=""><br>
+                  Welcome back, {{$root.profile.profile.personalAttributesMap.FIRST_NAME.value}}</ion-item>
+                  <ion-item menu-close="" href="#/search">Rent Now</ion-item>
+                  <ion-item ng-show="$root.loggedIn" menu-close="" href="#/newItem">Add new Item</ion-item>
+                  <ion-item ng-show="$root.loggedIn" menu-close="" href="#/myItems">My Items</ion-item>
+                  <ion-item ng-show="$root.loggedIn" menu-close="" href="#/myRents">My Rents</ion-item>
+                  <ion-item ng-show="$root.loggedIn" menu-close="" href="#/messages">Messages</ion-item>
+                  <ion-item ng-show="$root.loggedIn" menu-close="" href="#/updates">Notifications <span ng-controller="updatesCtrl" ng-init="myUpdatesInit()" ng-show="$root.notification_indicator > 0 " class="badge badge-assertive"> {{$root.notification_indicator}}</span></ion-item>
+                  <ion-item menu-close="" href="#/about">About</ion-item>
+                  <ion-item menu-close="" ng-show="$root.loggedIn" ng-click="$root.logout()">Logout</ion-item>
+               </ion-scroll>
+          </ion-side-menu>
+    </ion-side-menus>
+  </body>
+</html>

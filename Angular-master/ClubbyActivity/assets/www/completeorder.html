@@ -1,0 +1,55 @@
+<ons-page ng-controller="payconfirmCtrl" ng-init="start()" class="payment_page">
+    <ons-toolbar modifier="opacity">
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">
+            Pago
+        </div>
+        <div class="right">
+        </div>
+    </ons-toolbar>
+    <div>
+        <div style="margin-top: 20px;margin-bottom: 20px;text-align: center;font-size: 2rem;font-weight: bold;">$ {{total}}</div>
+        <div class="item_columns" style="float:none;border:none;">
+            <div class="navigation-bar__center additem_popup" style="float:none;">
+                <div class="button-bar" style="margin:0px auto;">
+                    <div class="button-bar__item cash_button" style="padding:1px;">
+                        <input type="radio" ng-model="payMethod" name="navi-segment-a" value="0"/>
+                        <div class="button-bar__button my_button" ></div>
+                        <span>Efectivo</span>
+                    </div>
+                    <div class="button-bar__item card_button" style="padding:1px;">
+                        <input type="radio" ng-model="payMethod" name="navi-segment-a" value="1"/>
+                        <div class="button-bar__button my_button" ></div>
+                        <span>Tarjeta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item_columns" style="margin-top:60px;">
+            <div style="position:relative;margin-top:40px;width:94%;margin-left:3%;">
+                <div ng-show="payMethod == 0">
+                    <div style="display:table;width:100%;">
+                        <span style="font-size:1.3rem;display:table-cell;vertical-align: middle;">Cantidad Recibida : </span><input style="text-align: center;display:table-cell;" type="number" ng-model="cash_amount"  ng-change="onChangeCashAmount()" class="text-custom text-input--underbar width-full" placeholder="Cantidad Recibida" value=""/>
+                    </div><div style="display:table;width:100%;" ><span style="font-size:1.3rem;display:table-cell;vertical-align: middle;">Retorno : </span><input style="border: 2px solid black;background: black;text-align: center;width:65%;margin-top: 4%;display:table-cell;color:white;" type="number" class="text-custom text-input--underbar width-full" disabled="disabled" placeholder="Retorno" value="{{payback}}"/>
+                    </div>
+                </div>
+                <div ng-show="payMethod == 1">
+                    <div style="display:table;width:100%;">
+                        <span style="font-size:1.3rem;display:table-cell;vertical-align: middle;">Número de Recibo : </span><input style="text-align: center;display:table-cell;" type="text" ng-model="card_number" class="text-custom text-input--underbar width-full"  placeholder="Número de Recibo" value=""/>
+                    </div>
+                </div>
+                <div style="padding-top: 50px;width:40%;margin:0 auto;">
+                    <input ng-click="doPay();" style="float:none;width:100%;" class="completed-order-button ng-isolate-scope button effeckt-button button--large slide-left" type="submit" value="Confirmar"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <filter id="blur">
+        <feGaussianBlur stdDeviation="10" />
+    </filter>
+    </svg> 
+
+</ons-page>
